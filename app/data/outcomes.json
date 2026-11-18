@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Rotina mapeada",
+    "body": "O caminho da tarefa, da entrada até a resposta, num desenho que você consegue explicar.",
+    "icon": "flow-arrow",
+    "accent": false
+  },
+  {
+    "title": "Protótipo do agente",
+    "body": "As instruções e uma versão simples para testar. É um protótipo de aprendizado, não um sistema pronto para o cliente.",
+    "icon": "cube",
+    "accent": true
+  },
+  {
+    "title": "Casos para continuar",
+    "body": "Situações anotadas para você repetir o teste depois e ajustar o que não funcionou.",
+    "icon": "checks",
+    "accent": false
+  }
+]

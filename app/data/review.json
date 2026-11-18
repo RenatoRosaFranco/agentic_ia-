@@ -1,0 +1,17 @@
+[
+  {
+    "label": "A tarefa",
+    "text": "Algo que você repete toda semana.",
+    "icon": "arrows-clockwise"
+  },
+  {
+    "label": "O desenho",
+    "text": "Consulta e sugere.",
+    "icon": "sliders-horizontal"
+  },
+  {
+    "label": "O teste",
+    "text": "Um protótipo para testar no seu dia.",
+    "icon": "flask"
+  }
+]

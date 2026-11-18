@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Você tem um pequeno negócio",
+    "body": "Traga a tarefa que toma a sua semana. No encontro, você separa o que a IA pode rascunhar do que continua na sua mão.",
+    "icon": "storefront"
+  },
+  {
+    "title": "Você trabalha no atendimento ou no escritório",
+    "body": "Mensagem repetida, papel e pedido de cliente servem como o caso do dia. Você conhece a rotina melhor do que qualquer instrução pronta.",
+    "icon": "users"
+  },
+  {
+    "title": "Você presta serviço",
+    "body": "Agenda, recado e pedido de orçamento cabem aqui. Preço e combinação com o cliente continuam com você.",
+    "icon": "wrench"
+  },
+  {
+    "title": "Você quer ver a IA na prática",
+    "body": "Empresa aberta não é requisito. Uma tarefa sua, ou de alguém próximo, já dá para acompanhar o encontro inteiro.",
+    "icon": "compass"
+  }
+]

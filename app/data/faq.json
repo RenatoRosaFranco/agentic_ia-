@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Preciso saber programar?",
+    "answer": "Não. Você escolhe a tarefa, combina o que a IA pode fazer e testa um protótipo. Código não entra no encontro.",
+    "icon": "chat-circle"
+  },
+  {
+    "question": "Preciso levar uma ideia?",
+    "answer": "Leve uma tarefa que se repete no trabalho. Se ainda não tiver uma, o exemplo da loja mostra o caminho.",
+    "icon": "lightbulb"
+  },
+  {
+    "question": "Vou sair com um agente pronto para usar no meu negócio?",
+    "answer": "Não. Você sai com um protótipo para testar e ajustar. Usar com cliente depende de nova revisão sua.",
+    "icon": "rocket"
+  },
+  {
+    "question": "Quando e onde será?",
+    "answer": "Ainda estamos definindo. O encontro é presencial em Cerro Largo, Rio Grande do Sul. Data, local, duração e investimento saem quando estiverem fechados. No dia do workshop, levar um notebook é obrigatório.",
+    "icon": "map-pin"
+  }
+]

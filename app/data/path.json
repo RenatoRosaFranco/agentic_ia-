@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Escolher uma tarefa repetitiva",
+    "body": "Traga algo que você faz quase do mesmo jeito toda semana, com começo e fim. Pode ser uma resposta a cliente, um papel que se acumula ou um pedido com os mesmos dados.",
+    "icon": "arrows-clockwise"
+  },
+  {
+    "title": "Definir o que o agente consulta, sugere e deve deixar para uma pessoa decidir",
+    "body": "Você marca a informação que a IA pode usar, o rascunho que ela prepara e a decisão que continua com alguém.",
+    "icon": "sliders-horizontal"
+  },
+  {
+    "title": "Montar e testar um protótipo com situações reais",
+    "body": "Junte as instruções e rode casos do seu dia: um comum, um com dado faltando e um em que o certo é parar.",
+    "icon": "flask"
+  }
+]
