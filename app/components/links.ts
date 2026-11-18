@@ -28,6 +28,21 @@ export const instructorLinks = [
   },
 ] as const;
 
+export const whatsappLinks = [
+  {
+    href: "https://whatsapp.com/channel/0029VbEL2R929752RXGc0r39",
+    title: "Canal",
+    description: "Avisos da próxima edição, quando data, local e investimento estiverem definidos.",
+    label: "Entrar no canal",
+  },
+  {
+    href: "https://chat.whatsapp.com/DxL2QnSAtlSDZhg5dsngr6",
+    title: "Grupo",
+    description: "Conversa com outras pessoas que também querem participar do encontro.",
+    label: "Entrar no grupo",
+  },
+] as const;
+
 export const socialLinks = [
   {
     href: "https://www.facebook.com/techmissoes",

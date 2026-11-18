@@ -5,6 +5,7 @@ import { ActivitiesSection } from "./components/path-section";
 import { InstructorSection } from "./components/instructor-section";
 import { EditionSection } from "./components/pilot-section";
 import { FaqSection } from "./components/faq-section";
+import { WhatsappSection } from "./components/whatsapp-section";
 import { HeroSection } from "./components/hero-section";
 import { TakeawaysSection } from "./components/outcomes-section";
 import { PreRegistrationProvider } from "./components/pre-registration";
@@ -25,6 +26,7 @@ export default function Home() {
         <EditionSection />
         <InstructorSection />
         <FaqSection />
+        <WhatsappSection />
       </main>
       <SiteFooter />
     </PreRegistrationProvider>
