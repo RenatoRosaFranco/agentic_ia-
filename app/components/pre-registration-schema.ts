@@ -1,7 +1,6 @@
 export const genderOptions = [
-  { value: "feminino", label: "Feminino" },
   { value: "masculino", label: "Masculino" },
-  { value: "outro", label: "Outro" },
+  { value: "feminino", label: "Feminino" },
   { value: "nao-informar", label: "Prefiro não informar" },
 ] as const;
 
