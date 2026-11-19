@@ -2,6 +2,7 @@
 
 import { Laptop, PencilSimple, X } from "@phosphor-icons/react/ssr";
 import { createContext, useContext, useEffect, useId, useRef, useState } from "react";
+import { RecaptchaField, recaptchaSiteKey, type RecaptchaFieldHandle } from "./recaptcha-field";
 import {
   genderOptions,
   validatePreRegistration,
@@ -55,6 +56,8 @@ function PreRegistrationDialog({ onClose }: { onClose: () => void }) {
   const titleId = useId();
   const descriptionId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
+  const captchaRef = useRef<RecaptchaFieldHandle>(null);
+  const [captchaToken, setCaptchaToken] = useState("");
   const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState<PreRegistrationErrors>({});
   const [pending, setPending] = useState(false);
@@ -75,7 +78,7 @@ function PreRegistrationDialog({ onClose }: { onClose: () => void }) {
         return;
       }
 
-      const focusable = [...dialogRef.current.querySelectorAll<HTMLElement>("input, select, button, a")].filter(
+      const focusable = [...dialogRef.current.querySelectorAll<HTMLElement>("input, select, button, a, iframe")].filter(
         (element) => !element.hasAttribute("disabled"),
       );
       const first = focusable[0];
@@ -115,6 +118,11 @@ function PreRegistrationDialog({ onClose }: { onClose: () => void }) {
       return;
     }
 
+    if (!captchaToken) {
+      setErrors({ form: "Confirme que você não é um robô." });
+      return;
+    }
+
     setPending(true);
     setErrors({});
 
@@ -122,11 +130,12 @@ function PreRegistrationDialog({ onClose }: { onClose: () => void }) {
       const response = await fetch("/api/pre-inscricao", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(result.value),
+        body: JSON.stringify({ ...result.value, recaptchaToken: captchaToken }),
       });
       const payload = (await response.json()) as { ok?: boolean; errors?: PreRegistrationErrors };
 
       if (!response.ok || !payload.ok) {
+        captchaRef.current?.reset();
         setErrors(payload.errors ?? { form: "Não foi possível registrar agora. Tente de novo." });
         return;
       }
@@ -300,6 +309,11 @@ function PreRegistrationDialog({ onClose }: { onClose: () => void }) {
                 </p>
               ) : null}
             </div>
+            <RecaptchaField
+              ref={captchaRef}
+              onToken={setCaptchaToken}
+              onError={() => setErrors((current) => ({ ...current, form: "Não foi possível carregar a verificação anti-robô." }))}
+            />
             {errors.form ? (
               <p className="text-sm text-[#c24141]" role="alert">
                 {errors.form}
@@ -311,7 +325,7 @@ function PreRegistrationDialog({ onClose }: { onClose: () => void }) {
               <button type="button" className={`${closeButtonClass} modal-action`} onClick={onClose}>
                 Fechar
               </button>
-              <button type="submit" className="cta modal-action" disabled={pending}>
+              <button type="submit" className="cta modal-action" disabled={pending || !recaptchaSiteKey}>
                 {pending ? "Enviando..." : "Enviar"}
               </button>
             </footer>
